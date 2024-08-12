@@ -7,14 +7,14 @@ import json
 def hjson_to_json():
     hjson_list = [
         './xaero-map-chinese/xaero-betterpvp.hjson',
-        './xaero-map-chinese/xaero_minimap.hjson',
-        './xaero-map-chinese/xaero_worldmap.hjson',
+        './xaero-map-chinese/xaero-minimap.hjson',
+        './xaero-map-chinese/xaero-worldmap.hjson',
     ]
 
     output_json_list = [
-        './assets/xaero_betterpvp/lang/zh_cn.json',
-        './assets/xaero_minimap/lang/zh_cn.json',
-        './assets/xaero_worldmap/lang/zh_cn.json',
+        './assets/xaerobetterpvp/lang/zh_cn.json',
+        './assets/xaerominimap/lang/zh_cn.json',
+        './assets/xaeroworldmap/lang/zh_cn.json',
     ]
 
     for hjson_file, json_file in zip(hjson_list, output_json_list):
@@ -45,7 +45,7 @@ def zip_files():
         'pack.mcmeta',
         'pack.png',
     ]
-    zip_filename = './xaero-map-chinese.zip'
+    zip_filename = './xaeros-map-chinese.zip'
     zip_files_and_folders(zip_filename, items_to_zip)
 
 def delete_files():

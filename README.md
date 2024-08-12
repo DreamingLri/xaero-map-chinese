@@ -15,14 +15,11 @@
 
 如果您想体验**最新**~~最不稳定~~的汉化更新：
 
-1. 将本项目clone到本地
-`git clone https://github.com/DreamingLri/xaero-map-chinese.git`
+1. 将本项目clone到本地: `git clone https://github.com/DreamingLri/xaero-map-chinese.git`
 
-2. 安装需求库
-`pip install hjson`
+2. 安装需求库: `pip install hjson`
 
-3. 运行 `generate.py` 文件即可获得资源包
-`python generate.py`
+3. 运行 `generate.py` 文件即可获得资源包: `python generate.py`
   
 
 ## 结语

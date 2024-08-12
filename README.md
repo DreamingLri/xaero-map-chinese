@@ -29,4 +29,4 @@
 
 如果您发现任何汉化错误，欢迎提交[issue](https://github.com/DreamingLri/masa-mods-chinese/issues/new)
 
-喜欢的话欢迎点一个[star](https://github.com/DreamingLri/xaero-map-chinese/star)
+喜欢的话欢迎点一个**Star**

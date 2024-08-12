@@ -1,7 +1,7 @@
 # xaero-map-chinese
 一个`xaero-map`的汉化资源包，包括`Xaero's Minimap` `Xaero's World Map`模组的汉化
 
-参考翻译[XaeroMap-CN-Localization](https://github.com/Sinbing/XaeroMap-CN-Localization)
+翻译参考[XaeroMap-CN-Localization](https://github.com/Sinbing/XaeroMap-CN-Localization)
 
 ## 简介
 

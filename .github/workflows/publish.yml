@@ -43,6 +43,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./xaero-map-chinese.zip
-          asset_name: xaero-map-chinese.zip
+          asset_path: ./xaeros-map-chinese.zip
+          asset_name: xaeros-map-chinese.zip
           asset_content_type: application/zip

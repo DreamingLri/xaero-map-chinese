@@ -1,5 +1,6 @@
 import os
 import shutil
+import subprocess
 import zipfile
 import hjson
 import json
@@ -51,7 +52,31 @@ def zip_files():
 def delete_files():
     shutil.rmtree('./assets')
 
+def rename_mcmeta():
+    def get_git_tags():
+        try:
+            result = subprocess.run(["git", "describe", "--tags", "--abbrev=0"], capture_output=True, text=True, check=True)
+            tag = result.stdout.splitlines()
+            return tag
+        except subprocess.CalledProcessError as e:
+            print(f"Error while running git command: {e}")
+            return []
+
+    tag = get_git_tags()
+
+    with open('pack.mcmeta', 'r', encoding='utf-8-sig') as f:
+        data = json.load(f)
+
+    data['pack']['pack_format'] = 34
+    data['pack']['description'] = '§eXaeros世界地图&小地图汉化' + '-' + tag[0]
+
+    with open('pack.mcmeta', 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+        
+
 hjson_to_json()
+rename_mcmeta()
 zip_files()
 delete_files()
 print('Done!')

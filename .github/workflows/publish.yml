@@ -21,7 +21,7 @@ jobs:
         with:
           python_version: 3.12
 
-      - name: Generate zip file
+      - name: Generate Files
         run: |
             python3 generate.py
 
@@ -36,7 +36,7 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload mcdr file
+      - name: Upload Files
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

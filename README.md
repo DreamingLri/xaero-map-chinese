@@ -3,6 +3,8 @@
 
 翻译参考[XaeroMap-CN-Localization](https://github.com/Sinbing/XaeroMap-CN-Localization)
 
+[![Crowdin](https://badges.crowdin.net/xaero-map-chinese/localized.svg)](https://crowdin.com/project/xaero-map-chinese)
+
 ## 简介
 
 > [!IMPORTANT]
@@ -19,7 +21,9 @@
 
 2. 安装需求库: `pip install hjson`
 
-3. 运行 `generate.py` 文件即可获得资源包: `python generate.py`
+3. 运行 `generate.py` 即可获得资源包: `python generate.py`
+
+4. 运行 `rename.py` 即可重命名资源包: `python rename.py`
   
 
 ## 结语

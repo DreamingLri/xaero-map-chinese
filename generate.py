@@ -4,29 +4,24 @@ import subprocess
 import zipfile
 import json
 
-def hjson_to_json():
-    hjson_list = [
-        './xaero-map-chinese/xaero-betterpvp.hjson',
-        './xaero-map-chinese/xaero-minimap.hjson',
-        './xaero-map-chinese/xaero-worldmap.hjson',
+def create_resource_pack():
+    file_list = [
+        'xaero-betterpvp.json',
+        'xaero-minimap.json',
+        'xaero-worldmap.json',
     ]
-
-    output_json_list = [
-        './assets/xaerobetterpvp/lang/zh_cn.json',
-        './assets/xaerominimap/lang/zh_cn.json',
-        './assets/xaeroworldmap/lang/zh_cn.json',
-    ]
-
-    for hjson_file, json_file in zip(hjson_list, output_json_list):
-        hjson_data = hjson.load(open(hjson_file, 'r', encoding='utf-8'))
-
-        # Convert the HJSON file to JSON
-        output_dir = os.path.dirname(json_file)
+    def write_file(language):
+        in_file = os.path.join('xaero-mao-chinese', language, file)
+        out_file = os.path.join('assets', file.split('.')[0], 'lang', language + '.json')
+        output_dir = os.path.dirname(out_file)
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
-        output_file = open(json_file, 'w', encoding='utf-8')
-        output_file.write(json.dumps(hjson_data, ensure_ascii=False, indent=4))
+        output_file = open(out_file, 'w', encoding='utf-8')
+        output_file.write(json.dumps(in_file, ensure_ascii=False, indent=4))
         output_file.close()
+
+    for file in file_list:
+        write_file('zh_cn')
 
 def zip_files():
     def zip_files_and_folders(zip_filename, items_to_zip):
@@ -66,7 +61,8 @@ def rename_mcmeta():
     with open('pack.mcmeta', 'r', encoding='utf-8-sig') as f:
         data = json.load(f)
 
-    data['pack']['pack_format'] = 34
+    data['pack']['pack_format'] = 42
+    data['pack']['supported_formats'] = [ 34, 42 ]
     data['pack']['description'] = '§eXaeros世界地图&小地图汉化' + '-' + tag[0]
 
     with open('pack.mcmeta', 'w', encoding='utf-8') as f:
@@ -74,7 +70,7 @@ def rename_mcmeta():
 
         
 
-hjson_to_json()
+create_resource_pack()
 rename_mcmeta()
 zip_files()
 delete_files()

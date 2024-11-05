@@ -23,7 +23,6 @@ jobs:
 
       - name: Generate zip file
         run: |
-            pip install hjson
             python3 generate.py
 
       - name: Create Release

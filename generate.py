@@ -2,7 +2,6 @@ import os
 import shutil
 import subprocess
 import zipfile
-import hjson
 import json
 
 def hjson_to_json():

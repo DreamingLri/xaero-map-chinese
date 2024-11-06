@@ -3,9 +3,12 @@
 name: Public Releases
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'  # 仅在推送标签时触发
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish'
+        required: true
+        default: 'latest'
 
 jobs:
   build:
@@ -35,6 +38,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+          body: "./.github/changelog/${{ github.ref }}change-log.md"
 
       - name: Upload Files
         uses: actions/upload-release-asset@v1
@@ -45,3 +49,39 @@ jobs:
           asset_path: ./xaeros-map-chinese.zip
           asset_name: xaeros-map-chinese.zip
           asset_content_type: application/zip
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: xaeros-map-chinese.zip
+          path: ./xaeros-map-chinese.zip
+
+  modrinth_publish:
+    name: Publish to Modrinth ${{ github.ref_name }}
+    runs-on: ubuntu-latest
+    needs: [build]
+
+    steps:
+      - name: Download Release
+        uses: actions/download-artifact@v4
+        with:
+          name: xaeros-map-chinese.zip
+      
+      - name: Publish to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: VEnCkfVF
+          modrinth-unfeature-mode: subset
+          name: xaero-map-chinese ${{ github.ref_name }}
+          version: ${{ github.ref_name }}
+          version-type: release
+          game-versions: |
+            [1.21, 1.21.3)
+          changelog: |
+            ${{ github.event.release.body }}
+          loaders: minecraft
+          files: |
+            xaeros-map-chinese.zip
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+

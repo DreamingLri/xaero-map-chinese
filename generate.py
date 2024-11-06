@@ -11,7 +11,9 @@ def create_resource_pack():
         'xaero-worldmap.json',
     ]
     def write_file(language):
-        in_file = os.path.join('xaero-mao-chinese', language, file)
+        in_file = os.path.join('xaero-map-chinese', language, file)
+        with open(in_file, 'r', encoding='utf-8-sig') as f:
+            in_file = json.load(f)
         out_file = os.path.join('assets', file.split('.')[0], 'lang', language + '.json')
         output_dir = os.path.dirname(out_file)
         if not os.path.exists(output_dir):

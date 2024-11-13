@@ -11,7 +11,7 @@
 > 本汉化为个人汉化版本，并非官方汉化
 
 ## 如何使用
-从[Release](https://github.com/DreamingLri/masa-mods-chinese/releases)下载最新版本汉化包，之后将汉化包放入`resourcepacks`文件夹中即可使用
+从[Release](https://github.com/DreamingLri/masa-mods-chinese/releases)下载最新版本汉化包，之后将汉化包放入`resourcepacks`文件夹中即可使用，记得启用它（
 
 ---
 
@@ -19,11 +19,9 @@
 
 1. 将本项目clone到本地: `git clone https://github.com/DreamingLri/xaero-map-chinese.git`
 
-2. 安装需求库: `pip install hjson`
+2. 运行 `generate.py` 即可获得资源包: `python generate.py`
 
-3. 运行 `generate.py` 即可获得资源包: `python generate.py`
-
-4. 运行 `rename.py` 即可重命名资源包: `python rename.py`
+3. 运行 `rename.py` 即可重命名资源包: `python rename.py`
   
 
 ## 结语

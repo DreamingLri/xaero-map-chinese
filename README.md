@@ -11,7 +11,7 @@
 > 本汉化为个人汉化版本，并非官方汉化
 
 ## 如何使用
-从[Release](https://github.com/DreamingLri/masa-mods-chinese/releases)下载最新版本汉化包，之后将汉化包放入`resourcepacks`文件夹中即可使用，记得启用它（
+从[Release](https://github.com/DreamingLri/xaero-map-chinese/releases)下载最新版本汉化包，之后将汉化包放入`resourcepacks`文件夹中即可使用，记得启用它（
 
 ---
 

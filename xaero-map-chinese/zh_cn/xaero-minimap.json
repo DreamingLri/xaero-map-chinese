@@ -377,7 +377,7 @@
 	"gui.xaero_minimap_block_map_settings": "地图方块设置",
 	"gui.xaero_overlay_settings": "渲染显示设置",
 	"gui.xaero_minimap_info_settings": "信息显示设置",
-	"gui.xaero_waypoint_settings": "路径点的设置",
+	"gui.xaero_waypoint_settings": "路径点设置",
 	"gui.xaero_minimap_misc_settings": "杂项",
 	"gui.xaero_entity_radar_category": "类型: ",
 	"gui.xaero_settings_not_found": "找不到与输入内容相符的条目！",

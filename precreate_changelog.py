@@ -25,12 +25,12 @@ tag = auto_increment_version()
 
 changelog_file = './.github/changelog/' + tag + '-changelog.md'
 
-template = f"""## {tag}
-### 更新内容
+template = f"""# {tag}
+## 更新内容
 
-### 修复错误
+## 修复错误
 
-### 吐槽
+## 吐槽
 """
 
 with open(changelog_file, 'w', encoding='utf-8') as f:

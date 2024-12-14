@@ -48,6 +48,7 @@ jobs:
       - name: Generate Zip Files
         run: |
             python3 generate.py
+            python3 precreate_changelog.py
 
       - name: Generate Changelog
         run: |

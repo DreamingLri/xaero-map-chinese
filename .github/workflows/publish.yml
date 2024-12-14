@@ -65,11 +65,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ inputs.tag }}
+          release_name: Release ${{ inputs.tag }}
           draft: false
           prerelease: false
-          body: "./.github/changelog/${{ github.ref }}change-log.md"
+          body: "./.github/changelog/${{ inputs.tag }}change-log.md"
 
       - name: Upload Files
         uses: actions/upload-release-asset@v1

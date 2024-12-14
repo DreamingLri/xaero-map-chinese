@@ -63,8 +63,8 @@ def rename_mcmeta():
     with open('pack.mcmeta', 'r', encoding='utf-8-sig') as f:
         data = json.load(f)
 
-    data['pack']['pack_format'] = 42
-    data['pack']['supported_formats'] = [ 34, 42 ]
+    data['pack']['pack_format'] = 46
+    data['pack']['supported_formats'] = [ 34, 46 ]
     data['pack']['description'] = '§eXaeros世界地图&小地图汉化' + '-' + tag[0]
 
     with open('pack.mcmeta', 'w', encoding='utf-8') as f:

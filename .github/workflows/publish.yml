@@ -69,7 +69,7 @@ jobs:
           release_name: Release ${{ inputs.tag }}
           draft: false
           prerelease: false
-          body: "./.github/changelog/${{ inputs.tag }}-changelog.md"
+          body_path: "./.github/changelog/${{ inputs.tag }}-changelog.md"
 
       - name: Upload Files
         uses: actions/upload-release-asset@v1

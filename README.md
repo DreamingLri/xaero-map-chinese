@@ -13,6 +13,8 @@
 ## 如何使用
 从[Release](https://github.com/DreamingLri/xaero-map-chinese/releases)下载最新版本汉化包，之后将汉化包放入`resourcepacks`文件夹中即可使用，记得启用它（
 
+**汉化包不支持热更新，需要重启游戏才能看到最新的汉化**
+
 ---
 
 如果您想体验**最新**~~最不稳定~~的汉化更新：
@@ -26,6 +28,6 @@
 
 ## 结语
 
-如果您发现任何汉化错误，欢迎提交[issue](https://github.com/DreamingLri/masa-mods-chinese/issues/new)
+如果您发现任何汉化错误，欢迎提交[issue](https://github.com/DreamingLri/xaero-map-chinese/issues/new)
 
 喜欢的话欢迎点一个**Star**
